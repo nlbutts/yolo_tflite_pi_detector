@@ -17,8 +17,9 @@ source venv/bin/activate
 pip install numpy==1.26.4 zmq opencv-python tflite_runtime
 wget https://github.com/ARM-software/armnn/releases/download/v24.05/ArmNN-linux-aarch64.tar.gz
 mkdir armnn
-cd armnn
+pushd armnn
 tar -xf ../ArmNN-linux-aarch64.tar.gz
+popd
 sed -i "s|INSTALL_LOC|`pwd`|g" systemd/zmqcam.service
 sed -i "s|INSTALL_LOC|`pwd`|g" systemd/yolov8_tflite.service
 sed -i "s|INSTALL_LOC|`pwd`|g" run_yolov8_tflite.sh
