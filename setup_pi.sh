@@ -19,7 +19,9 @@ wget https://github.com/ARM-software/armnn/releases/download/v24.05/ArmNN-linux-
 mkdir armnn
 cd armnn
 tar -xf ../ArmNN-linux-aarch64.tar.gz
-
+sed -i "s|INSTALL_LOC|`pwd`|g" systemd/zmqcam.service
+sed -i "s|INSTALL_LOC|`pwd`|g" systemd/yolov8_tflite.service
+sed -i "s|INSTALL_LOC|`pwd`|g" run_yolov8_tflite.sh
 sudo cp systemd/*.service /lib/systemd/system
 sudo systemctl daemon-reload
 sudo systemctl enable zmqcam

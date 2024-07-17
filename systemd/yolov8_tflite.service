@@ -6,7 +6,7 @@ After=network.target
 Type=simple
 Restart=always
 RestartSec=5
-ExecStart=/home/nlbutts/projects/ml/run_yolov8_tflite.sh
+ExecStart=INSTALL_LOC/run_yolov8_tflite.sh
 
 [Install]
 WantedBy=multi-user.target
